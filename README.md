@@ -11,3 +11,10 @@ static site directly to GitHub pages or any other plain old file host.
 npm install
 npx serve
 ```
+
+## Using npm packages
+
+Anything built to UMD could potentially work.
+
+See the [material-ui branch](tree/material-ui) for an example of using a React
+UMD module with preact-compat.
