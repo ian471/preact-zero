@@ -12,6 +12,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
   <link rel="manifest" href="site.webmanifest">
 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
   <style>
     .App {
       font-family: Arial, Helvetica, sans-serif;
@@ -23,9 +24,18 @@
   <script src="node_modules/preact/dist/preact.umd.js"></script>
   <script src="node_modules/preact/hooks/dist/hooks.umd.js"></script>
   <script src="node_modules/htm/preact/standalone.umd.js"></script>
+
+  <script src="node_modules/preact/compat/dist/compat.umd.js"></script>
+  <script>
+    var React = preactCompat, ReactDOM = preactCompat
+  </script>
+  <script src="node_modules/@material-ui/core/umd/material-ui.development.js"></script>
+
   <script>
     var { html } = htmPreact
     var { useState } = preactHooks
+
+    var { Button } = MaterialUI
 
     function App (props) {
       const [liked, setLiked] = useState(false)
@@ -33,7 +43,7 @@
       return html`
         <div class="App">
           <h1>Preact Zero</h1>
-          <button
+          <${Button}
             onclick=${e => setLiked(true)}
             disabled=${liked}
           >

@@ -9,6 +9,7 @@
   "author": "Ian Henckel",
   "license": "ISC",
   "dependencies": {
+    "@material-ui/core": "^4.10.2",
     "htm": "^3.0.4",
     "preact": "^10.4.4"
   }
