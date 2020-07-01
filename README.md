@@ -18,3 +18,18 @@ Anything built to UMD could potentially work.
 
 See the [material-ui branch](tree/material-ui) for an example of using a React
 UMD module with preact-compat.
+
+# Deploying
+
+Before copying to your server, install the required production dependencies:
+
+```
+npm install --production
+```
+
+If you are using Github Pages:
+
+* remove `node_modules/` from [.gitignore](.gitignore)
+* add an empty `.nojekyll` file
+* commit
+* push to the [gh-pages](../../tree/gh-pages) branch
