@@ -11,5 +11,11 @@
   "dependencies": {
     "htm": "^3.0.4",
     "preact": "^10.4.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@snowpack/plugin-webpack": "^1.4.0",
+    "snowpack": "^2.6.3"
   }
 }
