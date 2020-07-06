@@ -4,6 +4,7 @@
   "description": "A no-build-tools preact web app template",
   "main": "index.html",
   "scripts": {
+    "start": "npx light-server --serve . --watchexp '*' --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ian Henckel",
@@ -11,5 +12,8 @@
   "dependencies": {
     "htm": "^3.0.4",
     "preact": "^10.4.4"
+  },
+  "devDependencies": {
+    "light-server": "^2.7.0"
   }
 }
