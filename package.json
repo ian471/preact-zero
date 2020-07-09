@@ -2,18 +2,31 @@
   "name": "preact-zero",
   "version": "1.0.0",
   "description": "A no-build-tools preact web app template",
-  "main": "index.html",
   "scripts": {
-    "start": "npx light-server --serve . --watchexp '*' --open",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "reload -b",
+    "prepare": "snowpack install"
   },
   "author": "Ian Henckel",
   "license": "ISC",
   "dependencies": {
+    "es-module-shims": "^0.4.7",
     "htm": "^3.0.4",
     "preact": "^10.4.4"
   },
   "devDependencies": {
-    "light-server": "^2.7.0"
+    "reload": "^3.1.0",
+    "snowpack": "^2.6.4"
+  },
+  "snowpack": {
+    "install": [
+      "es-module-shims/dist/es-module-shims.min.js"
+    ],
+    "installOptions": {
+      "treeshake": true,
+      "alias": {
+        "react": "preact/compat",
+        "react-dom": "preact/compat"
+      }
+    }
   }
 }
