@@ -20,12 +20,12 @@
 </head>
 
 <body>
-  <script src="node_modules/preact/dist/preact.umd.js"></script>
-  <script src="node_modules/preact/hooks/dist/hooks.umd.js"></script>
-  <script src="node_modules/htm/preact/standalone.umd.js"></script>
-  <script>
-    var { html } = htmPreact
-    var { useState } = preactHooks
+  <script type="module">
+    import htm from '//jspm.dev/htm'
+    import { h, render } from '//jspm.dev/preact'
+    import { useState } from '//jspm.dev/preact/hooks'
+
+    const html = htm.bind(h)
 
     function App (props) {
       const [liked, setLiked] = useState(false)
@@ -43,7 +43,7 @@
       `
     }
 
-    preact.render(html`<${App} />`, document.body)
+    render(html`<${App} />`, document.body)
   </script>
 </body>
 

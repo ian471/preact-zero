@@ -7,9 +7,11 @@ box, with no build tools required.
 This means you can test without a special dev server, and deploy your code as a
 static site directly to GitHub pages or any other plain old file host.
 
+For example, you could use [light-server](https://www.npmjs.com/package/light-server)
+to enable auto-reloading during development:
+
 ```
-npm install
-npm start
+npx light-server --serve . --watchexp '*' --open
 ```
 
 ## Is this good?
@@ -26,22 +28,9 @@ See [this branch](../../tree/snowpack).
 
 ## Using npm packages
 
-Anything built to UMD could potentially work.
-
-See the [material-ui branch](tree/material-ui) for an example of using a React
-UMD module with preact-compat.
+This template uses [jspm](https://jspm.org/) to access npm packages as ES
+modules.
 
 # Deploying
 
-Before copying to your server, install the required production dependencies:
-
-```
-npm install --production
-```
-
-If you are using Github Pages:
-
-* remove `node_modules/` from [.gitignore](.gitignore)
-* add an empty `.nojekyll` file
-* commit
-* push to the [gh-pages](../../tree/gh-pages) branch
+Just copy to your server, or enable Github Pages for the repo.
