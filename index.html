@@ -12,29 +12,33 @@
   <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
   <link rel="manifest" href="site.webmanifest">
 
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+    }
+  </script>
+
   <style>
-    .App {
+    :root {
       font-family: Arial, Helvetica, sans-serif;
     }
   </style>
-</head>
 
-<body>
-  <script src="node_modules/preact/dist/preact.umd.js"></script>
-  <script src="node_modules/preact/hooks/dist/hooks.umd.js"></script>
-  <script src="node_modules/htm/preact/standalone.umd.js"></script>
-  <script>
-    var { html } = htmPreact
-    var { useState } = preactHooks
+  <script type="module">
+    import {
+      html,
+      render,
+      useState
+    } from "https://unpkg.com/htm/preact/standalone.module.js";
 
-    function App (props) {
+    function App(props) {
       const [liked, setLiked] = useState(false)
 
       return html`
-        <div class="App">
+        <div>
           <h1>Preact Zero</h1>
           <button
-            onclick=${e => setLiked(true)}
+            onclick=${() => setLiked(true)}
             disabled=${liked}
           >
             ${liked ? 'You liked this' : 'Like'}
@@ -43,8 +47,10 @@
       `
     }
 
-    preact.render(html`<${App} />`, document.body)
+    render(html`<${App} />`, document.body)
   </script>
-</body>
+</head>
+
+<body></body>
 
 </html>
