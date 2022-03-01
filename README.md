@@ -1,3 +1,11 @@
+<a href="https://bulma.io">
+  <img
+    src="https://bulma.io/images/made-with-bulma.png"
+    alt="Made with Bulma"
+    width="128"
+    height="24">
+</a>
+
 # 0️⃣ preact-zero
 
 This is a template you can use to develop a web app using

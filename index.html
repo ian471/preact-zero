@@ -11,18 +11,13 @@
   <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
   <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('sw.js')
     }
   </script>
-
-  <style>
-    :root {
-      font-family: Arial, Helvetica, sans-serif;
-    }
-  </style>
 
   <script type="module">
     import {
@@ -36,8 +31,9 @@
 
       return html`
         <div>
-          <h1>Preact Zero</h1>
+          <h1 class="title">Preact Zero</h1>
           <button
+            class="button"
             onclick=${() => setLiked(true)}
             disabled=${liked}
           >
